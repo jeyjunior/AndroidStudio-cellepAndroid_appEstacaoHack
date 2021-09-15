@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cellep" />
+        app:srcCompat="@drawable/logo_cellep" />
 
     <ImageView
         android:id="@+id/imageView4"
