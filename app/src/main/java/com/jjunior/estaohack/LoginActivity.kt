@@ -21,10 +21,11 @@ class LoginActivity : AppCompatActivity(){
         binding.btnLoginEntrar.setOnClickListener {
 
 
-
+            //Passar pras val os dados inseridos pelo user
             val email = binding.editLoginEmail.text.toString().trim()
             val senha = binding.editLoginSenha.text.toString().trim()
 
+            //Verificar se todos os campos foram preenchidos
             if(email.isEmpty()){
                 binding.editLoginEmail.error = "Campo obrigatório"
                 binding.editLoginEmail.requestFocus()
@@ -36,11 +37,12 @@ class LoginActivity : AppCompatActivity(){
 
             }else{
 
+                //Recuperar do arquivo .xml as informações salvas no cadastro
                 val sharedPrefs = getSharedPreferences("Cadastro $email", Context.MODE_PRIVATE)
                 val emailPrefs = sharedPrefs.getString("EMAIL","")
                 val senhaPrefs = sharedPrefs.getString("SENHA","")
 
-
+                //Verificar se as informações inseridas no email e senha são iguais as cadastradas
                 if(email == emailPrefs && senha == senhaPrefs){
                     Toast.makeText(this, "Usuário logado!", Toast.LENGTH_LONG).show()
 
